@@ -13,11 +13,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, // 使用正则表达式，表示以css结尾的都使用下面的loader
-        // 此写法是语法糖的形式
-        // loader:'css-loader'
-        // 一般使用下面方式配置loader
-        // use:'css-loader' 
+        test: /\.css$/, //使用正则表达式，表示以css结尾的都使用下面的loader     
+        // loader:'css-loader'   //写法1.此写法是语法糖的形式   
+        // use:[
+        //   {
+        //     loader:'css-loader'
+        //   }
+        // ],   //写法2
+        // use:['css-loader']   // 写法3.一般使用下面方式配置loader，是写法2的简写方式
         use: [
           'style-loader',
           'css-loader',
